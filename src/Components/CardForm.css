@@ -1,0 +1,82 @@
+
+.Card{
+    border-radius: 15px !important;
+    overflow: hidden;
+    width: 70%;
+}
+@media screen and (max-width: 850px){
+    .Card{
+        width: 100%;
+    }
+    .formTambah{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 540px){
+    .formTanggal{
+           margin-top: 10px;
+       }
+   }
+
+.logo{
+width:unset;
+height:45px;
+}
+.Card .card-header{
+    padding: 15px 0;
+    border-radius: 5px !important;
+    background-color: #73444E;
+    border: none;
+    text-align: center;
+    color: whitesmoke;
+}
+.Card .form{
+    width: 100%;
+}
+
+.zona{
+    height: 58px;
+}
+.hari{
+    height: 58px;
+}
+.Button{
+    width: 100%;
+    background-color: #73444E !important;
+    border-color: #73444E !important;
+}
+
+.labelForm:after{
+    content:"*" ;
+    color:red   
+    }
+.labelFormFilter{
+    display: flex;
+    font-size: small;
+    font-style: italic;
+}
+.labelFormFilter::before{
+    content:"*" ;
+    }
+
+.linkFoto{
+    margin: 4px 0;
+}
+.daftarhadir{
+    width: 95%;
+}
+.nb{
+    font-size: smaller;
+}
+.judul{
+    font-size:large;
+}
+.labelTutor{
+    font-size: smaller;
+}
+.tutor{
+    text-decoration: none;
+}
+.lovestory{
+    white-space: pre-line;
+}
