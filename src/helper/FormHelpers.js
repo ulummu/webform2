@@ -32,165 +32,88 @@ export const handleSubmit = (
   if (form.checkValidity() === true) {
     event.preventDefault();
     event.stopPropagation();
+    // console.log(values);
     if (dataGold === 1) {
       window.location.href =
         "https://api.whatsapp.com/send/?phone=6281215372042&text=" +
-        "1. Tema : " +
-        values.tema +
-        "%0a%0a2. Bahasa Undangan : " +
-        values.bahasa +
-        "%0a%0a3. Paket Undangan Web : " +
-        values.paket +
-        "%0a%0a4. Foto Undangan : " +
-        values.foto +
-        "%0a%0a5. Filter Instagram: " +
-        values.pakaiFilter +
-        filter +
-        "%0a%0a6. Nama yang didahulukan : " +
-        values.namaAwal +
-        "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan : " +
-        values.panggilanWanita +
-        "%0a-Nama Lengkap : " +
-        values.lengkapWanita +
-        "%0a-Nama Kedua Orang Tua : Putri " +
-        values.wanitaAnakKe +
-        " dari Bapak " +
-        values.namaBapakWanita +
-        " dan Ibu " +
-        values.namaIbuWanita +
-        "%0a%0a8. Mempelai Pria %0a-Nama Panggilan : " +
-        values.panggilanPria +
-        "%0a-Nama Lengkap : " +
-        values.lengkapPria +
-        "%0a-Nama Kedua Orang Tua : Putra " +
-        values.priaAnakKe +
-        " dari Bapak " +
-        values.namaBapakPria +
-        " dan Ibu " +
-        values.namaIbuPria +
-        "%0a%0a9. Rincian Acara %0a-Acara 1 " +
-        data +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariAkad +
-        ", " +
-        values.akad +
-        "%0a-Pukul " +
-        values.pukulAkad +
-        " " +
-        values.zonaWaktuAkad +
-        "%0a-Tempat acara : " +
-        values.tempatAkad +
-        "%0a-Maps acara : " +
-        values.mapsAkad +
-        "%0a%0a-Acara 2 " +
-        dataResepsi +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariResepsi +
-        ", " +
-        values.resepsi +
-        "%0a-Pukul " +
-        values.pukulResepsi +
-        " " +
-        values.zonaWaktuResepsi +
-        "%0a-Tempat acara : " +
-        values.tempatResepsi +
-        "%0a-Maps acara : " +
-        values.mapsResepsi +
-        "%0a%0a10. Musik : " +
-        values.musik +
-        "%0a%0aData Tambahan Paket Gold %0a%0a1. Love Story : " +
-        temp +
-        "%0a%0a2. Live Streaming : " +
-        values.live +
-        "%0a%0a3. Wedding Gift %0a%0a-Amplop Digital 1%0a-Nomor Rekening 1 : " +
-        values.nomorRek +
-        "%0a-Nama Bank 1 : " +
-        values.namaBank +
-        "%0a-Atas Nama 1 : " +
-        values.atasNama +
-        "%0a%0a-Amplop Digital 2%0a-Nomor Rekening 2 : " +
-        values.nomorRek2 +
-        "%0a-Nama Bank 2 : " +
-        values.namaBank2 +
-        "%0a-Atas Nama 2 : " +
-        values.atasNama2 +
-        "%0a%0a-Kirim Hadiah%0a-Alamat : " +
-        values.alamat +
-        "%0a-Nama Penerima : " +
-        values.namaPenerima +
-        "%0a-WA Konfirmasi Amplop/Penerima : " +
-        values.waKonfirmasi +
-        "%0a%0a4. Reservasi Kehadiran via WA : " +
-        values.daftarHadir +
-        noCatin;
-      // "%0a%0a5. QR Code RSVP : " +
-      // values.rsvp;
+        encodeURIComponent(`
+      1. Tema : ${values.tema}\n
+      2. Bahasa Undangan : ${values.bahasa}\n
+      3. Paket Undangan Web : ${values.paket}\n
+      4. Foto Undangan : ${values.foto}\n
+      5. Filter Instagram: ${values.pakaiFilter}
+       ${filter}\n
+      6. Nama yang didahulukan : ${values.namaAwal}\n
+      7. Mempelai Wanita
+      -Nama Panggilan : ${values.panggilanWanita}
+      -Nama Lengkap : ${values.lengkapWanita}
+      -Nama Kedua Orang Tua : Putri ${values.wanitaAnakKe} dari Bapak ${values.namaBapakWanita} dan Ibu ${values.namaIbuWanita}\n
+      8. Mempelai Pria-Nama Panggilan : ${values.panggilanPria}
+      -Nama Lengkap : ${values.lengkapPria}
+      -Nama Kedua Orang Tua : Putra ${values.priaAnakKe} dari Bapak ${values.namaBapakPria} dan Ibu ${values.namaIbuPria}\n
+      9. Rincian Acara\n
+      -Acara 1
+      -${data}
+      -Hari, Tanggal Bulan Tahun : ${values.hariAkad}, ${values.akad}
+      -Pukul ${values.pukulAkad} ${values.zonaWaktuAkad}
+      -Tempat acara : ${values.tempatAkad}
+      -Maps acara : ${values.mapsAkad}\n
+      -Acara 2
+      -${dataResepsi}
+      -Hari, Tanggal Bulan Tahun : ${values.hariResepsi}, ${values.resepsi}
+      -Pukul ${values.pukulResepsi} ${values.zonaWaktuResepsi}
+      -Tempat acara : ${values.tempatResepsi}
+      -Maps acara : ${values.mapsResepsi}\n
+      10. Musik : ${values.musik}\n
+      Data Tambahan Paket Gold\n 
+      1. Love Story : ${values.loveStory}\n
+      2. Live Streaming : ${values.live}\n
+      3. Wedding Gift
+      -Amplop Digital 1
+      -Nomor Rekening 1 : ${values.nomorRek}
+      -Nama Bank 1 : ${values.namaBank}
+      -Atas Nama 1 : ${values.atasNama}\n
+      -Amplop Digital 2
+      -Nomor Rekening 2 : ${values.nomorRek2}
+      -Nama Bank 2 : ${values.namaBank2}
+      -Atas Nama 2 : ${values.atasNama2}\n
+      -Kirim Hadiah
+      -Alamat : ${values.alamat}
+      -Nama Penerima : ${values.namaPenerima}\n
+      -WA Konfirmasi Amplop/Penerima : ${values.waKonfirmasi}\n
+      4. Reservasi Kehadiran via WA : ${values.daftarHadir} 
+      ${noCatin}`);
     } else {
       window.location.href =
         "https://api.whatsapp.com/send/?phone=6281215372042&text=" +
-        "1. Tema : " +
-        values.tema +
-        "%0a%0a2. Bahasa Undangan : " +
-        values.bahasa +
-        "%0a%0a3. Paket Undangan Web : " +
-        values.paket +
-        "%0a%0a4. Foto Undangan : " +
-        values.foto +
-        "%0a%0a5. Filter Instagram : " +
-        values.pakaiFilter +
-        filter +
-        "%0a%0a6. Nama yang didahulukan : " +
-        values.namaAwal +
-        "%0a%0a7. Mempelai Wanita %0a-Nama Panggilan :" +
-        values.panggilanWanita +
-        "%0a-Nama Lengkap : " +
-        values.lengkapWanita +
-        "%0a-Nama Kedua Orang Tua : Putri " +
-        values.wanitaAnakKe +
-        " dari Bapak " +
-        values.namaBapakWanita +
-        " dan Ibu " +
-        values.namaIbuWanita +
-        "%0a%0a8. Mempelai Pria %0a-Nama Panggilan : " +
-        values.panggilanPria +
-        "%0a-Nama Lengkap : " +
-        values.lengkapPria +
-        "%0a-Nama Kedua Orang Tua : Putra " +
-        values.priaAnakKe +
-        " dari Bapak " +
-        values.namaBapakPria +
-        " dan Ibu " +
-        values.namaIbuPria +
-        "%0a%0a9. Rincian Acara %0a-Acara 1" +
-        data +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariAkad +
-        ", " +
-        values.akad +
-        "%0a-Pukul " +
-        values.pukulAkad +
-        " " +
-        values.zonaWaktuAkad +
-        "%0a-Tempat acara : " +
-        values.tempatAkad +
-        "%0a-Maps acara : " +
-        values.mapsAkad +
-        "%0a%0a-Acara 2 " +
-        dataResepsi +
-        "%0a-Hari, Tanggal Bulan Tahun : " +
-        values.hariResepsi +
-        ", " +
-        values.resepsi +
-        "%0a-Pukul " +
-        values.pukulResepsi +
-        " " +
-        values.zonaWaktuResepsi +
-        "%0a-Tempat acara : " +
-        values.tempatResepsi +
-        "%0a-Maps acara : " +
-        values.mapsResepsi +
-        "%0a%0a10. Musik : " +
-        values.musik;
+        encodeURIComponent(`
+      1. Tema : ${values.tema}\n
+      2. Bahasa Undangan : ${values.bahasa}\n
+      3. Paket Undangan Web : ${values.paket}\n
+      4. Foto Undangan : ${values.foto}\n
+      5. Filter Instagram: ${values.pakaiFilter}
+       ${filter}\n
+      6. Nama yang didahulukan : ${values.namaAwal}\n
+      7. Mempelai Wanita
+      -Nama Panggilan : ${values.panggilanWanita}
+      -Nama Lengkap : ${values.lengkapWanita}
+      -Nama Kedua Orang Tua : Putri ${values.wanitaAnakKe} dari Bapak ${values.namaBapakWanita} dan Ibu ${values.namaIbuWanita}\n
+      8. Mempelai Pria-Nama Panggilan : ${values.panggilanPria}
+      -Nama Lengkap : ${values.lengkapPria}
+      -Nama Kedua Orang Tua : Putra ${values.priaAnakKe} dari Bapak ${values.namaBapakPria} dan Ibu ${values.namaIbuPria}\n
+      9. Rincian Acara\n-Acara 1
+      -${data}
+      -Hari, Tanggal Bulan Tahun : ${values.hariAkad}, ${values.akad}
+      -Pukul ${values.pukulAkad} ${values.zonaWaktuAkad}
+      -Tempat acara : ${values.tempatAkad}
+      -Maps acara : ${values.mapsAkad}\n
+      -Acara 2
+      -${dataResepsi}
+      -Hari, Tanggal Bulan Tahun : ${values.hariResepsi}, ${values.resepsi}
+      -Pukul ${values.pukulResepsi} ${values.zonaWaktuResepsi}
+      -Tempat acara : ${values.tempatResepsi}
+      -Maps acara : ${values.mapsResepsi}\n
+      10. Musik : ${values.musik}`);
     }
   }
   // console.log(dataGold);
@@ -277,20 +200,20 @@ export const handleFormInput = (
     setVisibleResepsi(false);
   }
   if (!!values.lainnyaAkad) {
-    setData("%0a-Acara : " + values.lainnyaAkad);
+    setData("Acara : " + values.lainnyaAkad);
   } else {
-    setData("%0a-Acara : " + values.namaAcaraAkad);
+    setData("Acara : " + values.namaAcaraAkad);
   }
   if (!!values.lainnyaResepsi) {
-    setDataResepsi("%0a-Acara : " + values.lainnyaResepsi);
+    setDataResepsi("Acara : " + values.lainnyaResepsi);
   } else {
-    setDataResepsi("%0a-Acara : " + values.namaAcaraResepsi);
+    setDataResepsi("Acara : " + values.namaAcaraResepsi);
   }
   if (event.target.name === "nomorCatin") {
-    setNoCatin("%0a-Nomor Calon Pengantin : " + event.target.value);
+    setNoCatin("-Nomor Calon Pengantin : " + event.target.value);
   }
   if (dataGold === 1) {
-    setTemp(encodeURI(values.loveStory));
+    // setTemp(encodeURI(values.loveStory));
     setValues({
       ...values,
       [name]: value,
@@ -298,10 +221,8 @@ export const handleFormInput = (
   }
   if (!!values.filterig) {
     setFilter(
-      "%0a-Tema Filter Instagram : " +
-        values.filterig +
-        "%0a-Frame : " +
-        values.frame
+      `-Tema Filter Instagram : ${values.filterig}
+       -Frame : ${values.frame}`
     );
   }
   setValues({
