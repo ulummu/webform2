@@ -222,8 +222,7 @@ export const handleFormInput = (
   }
   if (!!values.filterig) {
     setFilter(
-      `-Tema Filter Instagram : ${values.filterig}
-       -Frame : ${values.frame}`
+      `-Tema Filter Instagram : ${values.filterig}\n-Frame : ${values.frame}`
     );
   }
   setValues({
