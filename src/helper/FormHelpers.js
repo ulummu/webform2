@@ -48,7 +48,8 @@ export const handleSubmit = (
 -Nama Panggilan : ${values.panggilanWanita}
 -Nama Lengkap : ${values.lengkapWanita}
 -Nama Kedua Orang Tua : Putri ${values.wanitaAnakKe} dari Bapak ${values.namaBapakWanita} dan Ibu ${values.namaIbuWanita}\n
-8. Mempelai Pria-Nama Panggilan : ${values.panggilanPria}
+8. Mempelai Pria
+-Nama Panggilan : ${values.panggilanPria}
 -Nama Lengkap : ${values.lengkapPria}
 -Nama Kedua Orang Tua : Putra ${values.priaAnakKe} dari Bapak ${values.namaBapakPria} dan Ibu ${values.namaIbuPria}\n
 9. Rincian Acara\n
