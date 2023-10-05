@@ -99,13 +99,11 @@ export const handleFormInput = (
   noCatin,
   visibleAkad,
   visibleFilter,
-  visibleGold,
   visibleResepsi,
   setFilter,
   setValues,
   setVisibleAkad,
   setVisibleResepsi,
-  setVisibleGold,
   setVisible,
   setVisibleFilter,
   setDataGold,
@@ -131,16 +129,6 @@ export const handleFormInput = (
     event.target.value === "Tidak"
   ) {
     setVisibleFilter(false);
-  }
-  if (event.target.name === "paket" && event.target.value === "Gold") {
-    setVisibleGold(!visible);
-    setDataGold(1);
-  } else if (
-    event.target.name === "paket" &&
-    (event.target.value === "Silver" || event.target.value === "Bronze")
-  ) {
-    setVisibleGold(false);
-    setDataGold(0);
   }
   if (
     event.target.name === "namaAcaraAkad" &&
