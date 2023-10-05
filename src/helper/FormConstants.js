@@ -72,11 +72,6 @@ export const pakaiFilterPackages = [
   { value: "Iya", text: "Iya" },
   { value: "Tidak", text: "Tidak" },
 ];
-export const undanganPackages = [
-  { value: "Gold", text: "Gold" },
-  { value: "Silver", text: "Silver" },
-  { value: "Bronze", text: "Bronze" },
-];
 export const filterPackages = [
   { value: "Filter Wedding P", text: "Filter Wedding P" },
   { value: "Filter Wedding Q", text: "Filter Wedding Q" },
@@ -98,7 +93,7 @@ export const framePackages = [
   { value: "Frame 1 dan 2", text: "Frame 1 dan 2" },
   { value: "Frame 1, 2 dan 3", text: "Frame 1, 2 dan 3" },
 ];
-export const fotoPackages = [
+export const undanganPackages = [
   { value: "Dengan Foto", text: "Dengan Foto" },
   { value: "Tanpa Foto", text: "Tanpa Foto" },
   { value: "Animasi", text: "Animasi" },

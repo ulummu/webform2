@@ -19,7 +19,6 @@ import {
 import {
   bahasaPackages,
   filterPackages,
-  fotoPackages,
   framePackages,
   initialValues,
   namaPertama,
@@ -39,7 +38,6 @@ export default function CardForm(props) {
   const [validated, setValidated] = useState(false);
   const [values, setValues] = useState(initialValues);
   const [visible, setVisible] = useState(false);
-  const [visibleGold, setVisibleGold] = useState(false);
   const [visibleAkad, setVisibleAkad] = useState(false);
   const [visibleResepsi, setVisibleResepsi] = useState(false);
   const [visibleFilter, setVisibleFilter] = useState(false);
@@ -65,13 +63,11 @@ export default function CardForm(props) {
       noCatin,
       visibleAkad,
       visibleFilter,
-      visibleGold,
       visibleResepsi,
       setFilter,
       setValues,
       setVisibleAkad,
       setVisibleResepsi,
-      setVisibleGold,
       setVisible,
       setVisibleFilter,
       setDataGold,
@@ -150,16 +146,6 @@ export default function CardForm(props) {
                   optionsTitle="Silakan Pilih Paket"
                   options={undanganPackages}
                   errorText="Paket Belum Dipilih"
-                  onChange={handleInputChange}
-                />
-                <SelectFormComponent
-                  validasi={true}
-                  label="Foto Undangan"
-                  name="foto"
-                  value={values.foto}
-                  optionsTitle="Silakan Pilih"
-                  options={fotoPackages}
-                  errorText="Foto Belum Dipilih"
                   onChange={handleInputChange}
                 />
                 <Form.Group>
@@ -275,27 +261,25 @@ export default function CardForm(props) {
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>
-                  {visibleGold && (
-                    <DataWeddingGift
-                      loveStory={values.loveStory}
-                      live={values.live}
-                      nomorRek={values.nomorRek}
-                      namaBank={values.namaBank}
-                      atasNama={values.atasNama}
-                      nomorRek2={values.nomorRek2}
-                      namaBank2={values.namaBank2}
-                      atasNama2={values.atasNama2}
-                      namaPenerima={values.namaPenerima}
-                      alamat={values.alamat}
-                      waKonfirmasi={values.waKonfirmasi}
-                      daftarHadir={values.daftarHadir}
-                      visibl={visible}
-                      nomorCatin={values.nomorCatin}
-                      checkSpecialChar={checkSpecialChar}
-                      capitalFirstWord={capitalFirstWord}
-                      handleInputChange={handleInputChange}
-                    />
-                  )}
+                  <DataWeddingGift
+                    loveStory={values.loveStory}
+                    live={values.live}
+                    nomorRek={values.nomorRek}
+                    namaBank={values.namaBank}
+                    atasNama={values.atasNama}
+                    nomorRek2={values.nomorRek2}
+                    namaBank2={values.namaBank2}
+                    atasNama2={values.atasNama2}
+                    namaPenerima={values.namaPenerima}
+                    alamat={values.alamat}
+                    waKonfirmasi={values.waKonfirmasi}
+                    daftarHadir={values.daftarHadir}
+                    visibl={visible}
+                    nomorCatin={values.nomorCatin}
+                    checkSpecialChar={checkSpecialChar}
+                    capitalFirstWord={capitalFirstWord}
+                    handleInputChange={handleInputChange}
+                  />
                 </Form.Group>
                 <Form.Label className="nb">
                   <strong>NB</strong> : Jika ada tambahan data atau yang
