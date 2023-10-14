@@ -130,6 +130,7 @@ export const webThemes = [
   { value: "Tema 03", text: "Tema 03" },
   { value: "Tema 04", text: "Tema 04" },
   { value: "Tema Jawa", text: "Tema Jawa" },
+  { value: "Tema Batak", text: "Tema Batak" },
   { value: "Tema Minang", text: "Tema Minang" },
   { value: "Tema Aqiqah", text: "Tema Aqiqah" },
 ];
